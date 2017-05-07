@@ -8,20 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		1D7ADCC01EBE88C100597BA4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7ADCBF1EBE88C100597BA4 /* AppDelegate.swift */; };
-		1D7ADCC21EBE88C100597BA4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7ADCC11EBE88C100597BA4 /* ViewController.swift */; };
+		1D7ADCC21EBE88C100597BA4 /* HomePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7ADCC11EBE88C100597BA4 /* HomePickerViewController.swift */; };
 		1D7ADCC51EBE88C100597BA4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D7ADCC31EBE88C100597BA4 /* Main.storyboard */; };
 		1D7ADCC71EBE88C100597BA4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D7ADCC61EBE88C100597BA4 /* Assets.xcassets */; };
 		1D7ADCCA1EBE88C100597BA4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D7ADCC81EBE88C100597BA4 /* LaunchScreen.storyboard */; };
+		1D7ADCD21EBE8D4C00597BA4 /* YQL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7ADCD11EBE8D4C00597BA4 /* YQL.swift */; };
+		1DF811781EBFD13900A1FC1C /* ForeignPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF811771EBFD13900A1FC1C /* ForeignPickerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1D7ADCBC1EBE88C100597BA4 /* CurrencyConverter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CurrencyConverter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D7ADCBF1EBE88C100597BA4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1D7ADCC11EBE88C100597BA4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		1D7ADCC11EBE88C100597BA4 /* HomePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePickerViewController.swift; sourceTree = "<group>"; };
 		1D7ADCC41EBE88C100597BA4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1D7ADCC61EBE88C100597BA4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1D7ADCC91EBE88C100597BA4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1D7ADCCB1EBE88C100597BA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1D7ADCD11EBE8D4C00597BA4 /* YQL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YQL.swift; sourceTree = "<group>"; };
+		1DF811771EBFD13900A1FC1C /* ForeignPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForeignPickerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,8 +59,10 @@
 			isa = PBXGroup;
 			children = (
 				1D7ADCBF1EBE88C100597BA4 /* AppDelegate.swift */,
-				1D7ADCC11EBE88C100597BA4 /* ViewController.swift */,
+				1D7ADCC11EBE88C100597BA4 /* HomePickerViewController.swift */,
+				1DF811771EBFD13900A1FC1C /* ForeignPickerViewController.swift */,
 				1D7ADCC31EBE88C100597BA4 /* Main.storyboard */,
+				1D7ADCD11EBE8D4C00597BA4 /* YQL.swift */,
 				1D7ADCC61EBE88C100597BA4 /* Assets.xcassets */,
 				1D7ADCC81EBE88C100597BA4 /* LaunchScreen.storyboard */,
 				1D7ADCCB1EBE88C100597BA4 /* Info.plist */,
@@ -136,8 +142,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1D7ADCC21EBE88C100597BA4 /* ViewController.swift in Sources */,
+				1D7ADCC21EBE88C100597BA4 /* HomePickerViewController.swift in Sources */,
+				1DF811781EBFD13900A1FC1C /* ForeignPickerViewController.swift in Sources */,
 				1D7ADCC01EBE88C100597BA4 /* AppDelegate.swift in Sources */,
+				1D7ADCD21EBE8D4C00597BA4 /* YQL.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,6 +307,7 @@
 				1D7ADCD01EBE88C100597BA4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
