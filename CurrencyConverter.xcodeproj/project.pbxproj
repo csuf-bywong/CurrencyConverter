@@ -15,6 +15,7 @@
 		1DF811781EBFD13900A1FC1C /* ForeignPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF811771EBFD13900A1FC1C /* ForeignPickerViewController.swift */; };
 		1DF8117B1EBFDE0B00A1FC1C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1DF811791EBFDE0B00A1FC1C /* Main.storyboard */; };
 		1DF811811EBFEF3F00A1FC1C /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF811801EBFEF3F00A1FC1C /* FavoriteViewController.swift */; };
+		1DF811831EBFF8D500A1FC1C /* shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF811821EBFF8D500A1FC1C /* shared.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		1DF811771EBFD13900A1FC1C /* ForeignPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForeignPickerViewController.swift; sourceTree = "<group>"; };
 		1DF8117A1EBFDE0B00A1FC1C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1DF811801EBFEF3F00A1FC1C /* FavoriteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
+		1DF811821EBFF8D500A1FC1C /* shared.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = shared.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 				1D7ADCC11EBE88C100597BA4 /* HomePickerViewController.swift */,
 				1DF811771EBFD13900A1FC1C /* ForeignPickerViewController.swift */,
 				1DF811801EBFEF3F00A1FC1C /* FavoriteViewController.swift */,
+				1DF811821EBFF8D500A1FC1C /* shared.swift */,
 				1D7ADCD11EBE8D4C00597BA4 /* YQL.swift */,
 				1D7ADCC61EBE88C100597BA4 /* Assets.xcassets */,
 				1D7ADCC81EBE88C100597BA4 /* LaunchScreen.storyboard */,
@@ -149,6 +152,7 @@
 				1DF811781EBFD13900A1FC1C /* ForeignPickerViewController.swift in Sources */,
 				1D7ADCC01EBE88C100597BA4 /* AppDelegate.swift in Sources */,
 				1DF811811EBFEF3F00A1FC1C /* FavoriteViewController.swift in Sources */,
+				1DF811831EBFF8D500A1FC1C /* shared.swift in Sources */,
 				1D7ADCD21EBE8D4C00597BA4 /* YQL.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

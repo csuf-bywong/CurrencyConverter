@@ -8,9 +8,11 @@
 
 import UIKit
 
-class ForeignPickerViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
+class ForeignPickerViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate {
     
     @IBOutlet weak var foreignPickerView: UIPickerView!
+    @IBOutlet weak var amountTextField: UITextField!
+    @IBOutlet weak var convertedLabel: UILabel!
     
     
     var foreignPickerData = ["US Dollar", "Japanese Yen", "British Pound"]
@@ -60,10 +62,34 @@ class ForeignPickerViewController: UIViewController, UIPickerViewDataSource, UIP
         return foreignPickerData[row]
     }
     
+    // Function to calculate the currency conversion
+    @IBAction func calcButton(_ sender: UIButton) {
+        // variable initialization
+        var amount:Float = 0
+        // set variable equal to numbers inside the text field
+        amount = Float(amountTextField.text!)!
+        sharedInstance.homeCur = amount
+        
+        // do some math things
+        var convert:Float = 0
+        convert = amount * sharedInstance.rate
+        sharedInstance.converted = convert
+        
+        // update the convertedLabel text
+        convertedLabel.text = "\(amount) \(sharedInstance.home) to \(sharedInstance.foreign) is \(sharedInstance.converted) "
+    }
+    
+    // should retrun the text of the selected element in pickerView
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int){
+        let value = foreignPickerData[row]
+        sharedInstance.home = value
+    }
+    
     //Enable unwinding other views
     @IBAction func unwindToForeignPickerView(segue:UIStoryboardSegue){
     }
     
-    
+    //  allowing access to the shared instance
+    let sharedInstance: SharedVars = SharedVars.shared
 }
 

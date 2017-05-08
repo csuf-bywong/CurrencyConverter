@@ -10,6 +10,7 @@ import UIKit
 
 class FavoriteViewController: UIViewController {
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -40,4 +41,36 @@ class FavoriteViewController: UIViewController {
     func handleSwipe(_ sender:UIGestureRecognizer){
         self.performSegue(withIdentifier: "unwindToForeign", sender:self)
     }
+    
+    // MARK : Switches
+    @IBOutlet weak var USDSwitch: UISwitch!
+    @IBOutlet weak var JPYSwitch: UISwitch!
+    @IBOutlet weak var GBPSwitch: UISwitch!
+    @IBOutlet weak var CADSwitch: UISwitch!
+    @IBOutlet weak var EURSwitch: UISwitch!
+    @IBOutlet weak var CNYSwitch: UISwitch!
+    
+    @IBAction func updateButton(_ sender: UIButton) {
+        if USDSwitch.isOn{
+            sharedInstance.pickerArray.append("US Dollar")
+        }
+        if JPYSwitch.isOn{
+            sharedInstance.pickerArray.append("Japanese Yen")
+        }
+        if GBPSwitch.isOn{
+            sharedInstance.pickerArray.append("British Pound")
+        }
+        if CADSwitch.isOn{
+            sharedInstance.pickerArray.append("Canadian Dollar")
+        }
+        if EURSwitch.isOn{
+            sharedInstance.pickerArray.append("European Union Euro")
+        }
+        if CNYSwitch.isOn{
+            sharedInstance.pickerArray.append("Chinese Yuan")
+        }
+    }
+    
+    //  allowing access to the shared instance
+    let sharedInstance: SharedVars = SharedVars.shared
 }

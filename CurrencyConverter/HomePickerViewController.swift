@@ -13,6 +13,7 @@ class HomePickerViewController: UIViewController, UIPickerViewDataSource, UIPick
     @IBOutlet weak var homePickerView: UIPickerView!
     
     var homePickerData = ["US Dollar", "Japanese Yen", "British Pound"]
+    //var homePickerData = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,10 +53,19 @@ class HomePickerViewController: UIViewController, UIPickerViewDataSource, UIPick
         return homePickerData[row]
     }
     
+    // should retrun the text of the selected element in pickerView
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int){
+        let value = homePickerData[row]
+        sharedInstance.home = value
+    }
+    
     // allow unwinding for foreignview
     @IBAction func unwindToHome(segue:UIStoryboardSegue){
         
     }
+
+    //  allowing access to the shared instance
+    let sharedInstance: SharedVars = SharedVars.shared
 
 
 }
