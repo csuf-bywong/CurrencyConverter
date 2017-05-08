@@ -16,14 +16,28 @@ class HomePickerViewController: UIViewController, UIPickerViewDataSource, UIPick
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Make swipe gestures
+        let swipeLeft:UISwipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action:#selector(handleSwipe))
+        swipeLeft.direction = UISwipeGestureRecognizerDirection.left
+        view.addGestureRecognizer(swipeLeft)
+        
         // Do any additional setup after loading the view, typically from a nib.
         homePickerView.dataSource = self
         homePickerView.delegate = self
+        
+
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    // MARK : Functions
+    
+    // Swipe function
+    func handleSwipe(_ sender:UIGestureRecognizer){
+        self.performSegue(withIdentifier: "showForeignPicker", sender: self)
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -36,6 +50,11 @@ class HomePickerViewController: UIViewController, UIPickerViewDataSource, UIPick
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return homePickerData[row]
+    }
+    
+    // allow unwinding for foreignview
+    @IBAction func unwindToHome(segue:UIStoryboardSegue){
+        
     }
 
 
