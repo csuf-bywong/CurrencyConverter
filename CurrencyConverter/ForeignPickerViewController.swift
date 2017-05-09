@@ -81,8 +81,9 @@ class ForeignPickerViewController: UIViewController, UIPickerViewDataSource, UIP
     
     // should retrun the text of the selected element in pickerView
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int){
-        let value = foreignPickerData[row]
-        sharedInstance.home = value
+        //let value = foreignPickerData[row]
+        sharedInstance.foreign = foreignPickerData[row]
+        convertedLabel.text = sharedInstance.foreign
     }
     
     //Enable unwinding other views

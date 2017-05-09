@@ -55,8 +55,8 @@ class HomePickerViewController: UIViewController, UIPickerViewDataSource, UIPick
     
     // should retrun the text of the selected element in pickerView
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int){
-        let value = homePickerData[row]
-        sharedInstance.home = value
+        //let value = homePickerData[row]
+        sharedInstance.home = homePickerData[row]
     }
     
     // allow unwinding for foreignview
