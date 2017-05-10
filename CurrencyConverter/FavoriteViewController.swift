@@ -18,6 +18,15 @@ class FavoriteViewController: UIViewController {
         let swipeRight:UISwipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipe))
         swipeRight.direction = UISwipeGestureRecognizerDirection.right
         view.addGestureRecognizer(swipeRight)
+        
+        // have the switch on/off values equal to the default
+        USDSwitch.isOn = sharedInstance.USDisOn
+        JPYSwitch.isOn = sharedInstance.JPYisOn
+        GBPSwitch.isOn = sharedInstance.GBPisOn
+        CADSwitch.isOn = sharedInstance.CADisOn
+        EURSwitch.isOn = sharedInstance.EURisOn
+        CNYSwitch.isOn = sharedInstance.CNYisOn
+        
 
     }
 
@@ -27,15 +36,6 @@ class FavoriteViewController: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
     // Swipe function
     func handleSwipe(_ sender:UIGestureRecognizer){
@@ -50,24 +50,45 @@ class FavoriteViewController: UIViewController {
     @IBOutlet weak var EURSwitch: UISwitch!
     @IBOutlet weak var CNYSwitch: UISwitch!
     
+   
+    // MARK: Action
+    
     @IBAction func updateButton(_ sender: UIButton) {
+        // empty the array so it will not keep the last favorites
+        sharedInstance.pickerArray = [String]()
+        
+        // put all button statuses to false
+        sharedInstance.USDisOn = false
+        sharedInstance.JPYisOn = false
+        sharedInstance.GBPisOn = false
+        sharedInstance.CADisOn = false
+        sharedInstance.EURisOn = false
+        sharedInstance.CNYisOn = false
+        
+        // update the buttons status's accordingly
         if USDSwitch.isOn{
             sharedInstance.pickerArray.append("US Dollar")
+            sharedInstance.USDisOn = true
         }
         if JPYSwitch.isOn{
             sharedInstance.pickerArray.append("Japanese Yen")
+            sharedInstance.JPYisOn = true
         }
         if GBPSwitch.isOn{
             sharedInstance.pickerArray.append("British Pound")
+            sharedInstance.GBPisOn = true
         }
         if CADSwitch.isOn{
             sharedInstance.pickerArray.append("Canadian Dollar")
+            sharedInstance.CADisOn = true
         }
         if EURSwitch.isOn{
             sharedInstance.pickerArray.append("European Union Euro")
+            sharedInstance.EURisOn = true
         }
         if CNYSwitch.isOn{
             sharedInstance.pickerArray.append("Chinese Yuan")
+            sharedInstance.CNYisOn = true
         }
     }
     

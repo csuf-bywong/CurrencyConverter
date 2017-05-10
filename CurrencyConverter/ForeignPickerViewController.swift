@@ -31,6 +31,8 @@ class ForeignPickerViewController: UIViewController, UIPickerViewDataSource, UIP
         // Do any additional setup after loading the view, typically from a nib.
         foreignPickerView.dataSource = self
         foreignPickerView.delegate = self
+        
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -64,19 +66,53 @@ class ForeignPickerViewController: UIViewController, UIPickerViewDataSource, UIP
     
     // Function to calculate the currency conversion
     @IBAction func calcButton(_ sender: UIButton) {
+        // this should give us the rate
+        exampleUsage()
+        
+        
         // variable initialization
         var amount:Float = 0
         // set variable equal to numbers inside the text field
         amount = Float(amountTextField.text!)!
-        sharedInstance.homeCur = amount
+        sharedInstance.amount = amount
         
-        // do some math things
-        var convert:Float = 0
-        convert = amount * sharedInstance.rate
-        sharedInstance.converted = convert
-        
+        var homeSymbol:String = ""
+        var foreignSymbol:String = ""
+        //do the symbol assignments
+        switch sharedInstance.home{
+        case "US Dollar":
+            homeSymbol = "$"
+        case "Japanese Yen":
+            homeSymbol = "¥"
+        case "British Pound":
+                homeSymbol = "£"
+        case "Canadian Dollar":
+            homeSymbol = "C$"
+        case "European Union Euro":
+            homeSymbol = "€"
+        case "Chinese Yuan":
+                    homeSymbol = "元"
+        default:
+            homeSymbol = " "
+        }
+        switch sharedInstance.foreign{
+        case "US Dollar":
+            foreignSymbol = "$"
+        case "Japanese Yen":
+            foreignSymbol = "¥"
+        case "British Pound":
+            foreignSymbol = "£"
+        case "Canadian Dollar":
+            foreignSymbol = "C$"
+        case "European Union Euro":
+            foreignSymbol = "€"
+        case "Chinese Yuan":
+            foreignSymbol = "元"
+        default:
+            foreignSymbol = " "
+        }
         // update the convertedLabel text
-        convertedLabel.text = "\(amount) \(sharedInstance.home) to \(sharedInstance.foreign) is \(sharedInstance.converted) "
+        convertedLabel.text = "\(homeSymbol)\(amount) is \(foreignSymbol)\(sharedInstance.converted) with rate \(sharedInstance.rate)"
     }
     
     // should retrun the text of the selected element in pickerView

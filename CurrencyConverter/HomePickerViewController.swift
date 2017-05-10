@@ -12,11 +12,17 @@ class HomePickerViewController: UIViewController, UIPickerViewDataSource, UIPick
 
     @IBOutlet weak var homePickerView: UIPickerView!
     
-    var homePickerData = ["US Dollar", "Japanese Yen", "British Pound"]
-    //var homePickerData = [String]()
+
+    //var homePickerData = ["US Dollar", "Japanese Yen", "British Pound"]
+    var homePickerData = [String]()
+    let index:Int = 0
+
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        homePickerData = sharedInstance.pickerArray
+        
         // Make swipe gestures
         let swipeLeft:UISwipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action:#selector(handleSwipe))
         swipeLeft.direction = UISwipeGestureRecognizerDirection.left
@@ -25,8 +31,6 @@ class HomePickerViewController: UIViewController, UIPickerViewDataSource, UIPick
         // Do any additional setup after loading the view, typically from a nib.
         homePickerView.dataSource = self
         homePickerView.delegate = self
-        
-
     }
 
     override func didReceiveMemoryWarning() {
@@ -55,7 +59,6 @@ class HomePickerViewController: UIViewController, UIPickerViewDataSource, UIPick
     
     // should retrun the text of the selected element in pickerView
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int){
-        //let value = homePickerData[row]
         sharedInstance.home = homePickerData[row]
     }
     
