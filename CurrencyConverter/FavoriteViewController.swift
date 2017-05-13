@@ -14,7 +14,9 @@ class FavoriteViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view. // Add swipe right gesture
+        // Do any additional setup after loading the view.
+        
+        // Add swipe right gesture
         let swipeRight:UISwipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipe))
         swipeRight.direction = UISwipeGestureRecognizerDirection.right
         view.addGestureRecognizer(swipeRight)
@@ -26,8 +28,6 @@ class FavoriteViewController: UIViewController {
         CADSwitch.isOn = sharedInstance.CADisOn
         EURSwitch.isOn = sharedInstance.EURisOn
         CNYSwitch.isOn = sharedInstance.CNYisOn
-        
-
     }
 
     override func didReceiveMemoryWarning() {
@@ -53,6 +53,8 @@ class FavoriteViewController: UIViewController {
    
     // MARK: Action
     
+    
+    // this updates the shared.pickerArray data
     @IBAction func updateButton(_ sender: UIButton) {
         // empty the array so it will not keep the last favorites
         sharedInstance.pickerArray = [String]()
@@ -65,7 +67,9 @@ class FavoriteViewController: UIViewController {
         sharedInstance.EURisOn = false
         sharedInstance.CNYisOn = false
         
+        
         // update the buttons status's accordingly
+        // appends the string to pickerArray if true
         if USDSwitch.isOn{
             sharedInstance.pickerArray.append("US Dollar")
             sharedInstance.USDisOn = true
@@ -91,6 +95,7 @@ class FavoriteViewController: UIViewController {
             sharedInstance.CNYisOn = true
         }
     }
+    
     
     //  allowing access to the shared instance
     let sharedInstance: SharedVars = SharedVars.shared

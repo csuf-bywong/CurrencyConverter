@@ -11,7 +11,7 @@ func getRate()->Float{
 
     // Example usage
     let myYQL = YQL()
-    let queryString = "select * from yahoo.finance.xchange where pair in (\"EURUSD\", \"GBPUSD\")"
+    let queryString = "select * from yahoo.finance.xchange where pair in (\"\(sharedInstance.home)\(sharedInstance.foreign)\")"
     var rate:Float = 0
     
     // Network session is asyncronous so use a closure to act upon data once data is returned
@@ -26,6 +26,8 @@ func getRate()->Float{
         let resultsDict = queryDict["results"] as! [String: Any]
         let rateArray = resultsDict["rate"] as! [Any]
         let rateDict = rateArray[0] as! [String: Any]
+        
+        // this is casted down to a float which should be used in the currency conversion
         rate = Float(rateDict["Rate"] as! String)!
 
         sharedInstance.getSetRate(rate)

@@ -12,15 +12,14 @@ class HomePickerViewController: UIViewController, UIPickerViewDataSource, UIPick
 
     @IBOutlet weak var homePickerView: UIPickerView!
     
-
-    //var homePickerData = ["US Dollar", "Japanese Yen", "British Pound"]
+    // initialize the pickerData as an empty string array
     var homePickerData = [String]()
-    let index:Int = 0
-
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // the data inside the picker is the shared array inside the singleton
         homePickerData = sharedInstance.pickerArray
         
         // Make swipe gestures
@@ -45,13 +44,16 @@ class HomePickerViewController: UIViewController, UIPickerViewDataSource, UIPick
         self.performSegue(withIdentifier: "showForeignPicker", sender: self)
     }
     
+    
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
     
+    
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int)-> Int {
         return homePickerData.count
     }
+    
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return homePickerData[row]
@@ -62,19 +64,21 @@ class HomePickerViewController: UIViewController, UIPickerViewDataSource, UIPick
         sharedInstance.home = homePickerData[row]
     }
     
+    
+    // updates the data inside the pickerView
     @IBAction func updatePickerButton(_ sender: UIButton) {
         homePickerData = sharedInstance.pickerArray
         homePickerView.reloadAllComponents()
     }
+    
     
     // allow unwinding for foreignview
     @IBAction func unwindToHome(segue:UIStoryboardSegue){
         
     }
 
+    
     //  allowing access to the shared instance
     let sharedInstance: SharedVars = SharedVars.shared
-
-
 }
 

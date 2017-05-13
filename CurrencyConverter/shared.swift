@@ -23,7 +23,9 @@ class SharedVars{
     // by default I will have these in the pickers
     var pickerArray = [String]()
     
-    // these are all the buttons; used to see if they are turned on or not
+    
+    // these are for all the buttons on last view; used to see if they are turned on or not
+    // default is set so that first three are turned on
     var USDisOn:Bool = true
     var JPYisOn:Bool = true
     var GBPisOn:Bool = true
@@ -44,6 +46,7 @@ class SharedVars{
     }
     
     
+    //
     func getSetRate(_ num: Float)->Void{
         let getRate:Float = num
         self.rate = getRate

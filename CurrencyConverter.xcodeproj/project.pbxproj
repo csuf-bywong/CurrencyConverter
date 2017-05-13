@@ -17,6 +17,7 @@
 		1DF811811EBFEF3F00A1FC1C /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF811801EBFEF3F00A1FC1C /* FavoriteViewController.swift */; };
 		1DF811831EBFF8D500A1FC1C /* shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF811821EBFF8D500A1FC1C /* shared.swift */; };
 		1DF811871EC2B40900A1FC1C /* YQLimplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF811861EC2B40900A1FC1C /* YQLimplementation.swift */; };
+		1DF811A91EC6E9E500A1FC1C /* readme.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1DF811A81EC6E9E500A1FC1C /* readme.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		1DF811801EBFEF3F00A1FC1C /* FavoriteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
 		1DF811821EBFF8D500A1FC1C /* shared.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = shared.swift; sourceTree = "<group>"; };
 		1DF811861EC2B40900A1FC1C /* YQLimplementation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YQLimplementation.swift; sourceTree = "<group>"; };
+		1DF811A81EC6E9E500A1FC1C /* readme.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = readme.txt; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				1D7ADCC11EBE88C100597BA4 /* HomePickerViewController.swift */,
 				1DF811771EBFD13900A1FC1C /* ForeignPickerViewController.swift */,
 				1DF811861EC2B40900A1FC1C /* YQLimplementation.swift */,
+				1DF811A81EC6E9E500A1FC1C /* readme.txt */,
 				1DF811801EBFEF3F00A1FC1C /* FavoriteViewController.swift */,
 				1DF811821EBFF8D500A1FC1C /* shared.swift */,
 				1D7ADCD11EBE8D4C00597BA4 /* YQL.swift */,
@@ -140,6 +143,7 @@
 			files = (
 				1DF8117B1EBFDE0B00A1FC1C /* Main.storyboard in Resources */,
 				1D7ADCCA1EBE88C100597BA4 /* LaunchScreen.storyboard in Resources */,
+				1DF811A91EC6E9E500A1FC1C /* readme.txt in Resources */,
 				1D7ADCC71EBE88C100597BA4 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
