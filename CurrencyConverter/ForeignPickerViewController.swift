@@ -15,7 +15,7 @@ class ForeignPickerViewController: UIViewController, UIPickerViewDataSource, UIP
     @IBOutlet weak var convertedLabel: UILabel!
     
     
-    var foreignPickerData = ["US Dollar", "Japanese Yen", "British Pound"]
+    var foreignPickerData = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -67,7 +67,7 @@ class ForeignPickerViewController: UIViewController, UIPickerViewDataSource, UIP
     // Function to calculate the currency conversion
     @IBAction func calcButton(_ sender: UIButton) {
         // this should give us the rate
-        exampleUsage()
+        sharedInstance.rate = getRate()
         
         
         // variable initialization
@@ -122,6 +122,10 @@ class ForeignPickerViewController: UIViewController, UIPickerViewDataSource, UIP
         convertedLabel.text = sharedInstance.foreign
     }
     
+    @IBAction func updatePickerButton(_ sender: UIButton) {
+        foreignPickerData = sharedInstance.pickerArray
+        foreignPickerView.reloadAllComponents()
+    }
     //Enable unwinding other views
     @IBAction func unwindToForeignPickerView(segue:UIStoryboardSegue){
     }

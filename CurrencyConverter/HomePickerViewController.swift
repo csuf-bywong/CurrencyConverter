@@ -62,6 +62,11 @@ class HomePickerViewController: UIViewController, UIPickerViewDataSource, UIPick
         sharedInstance.home = homePickerData[row]
     }
     
+    @IBAction func updatePickerButton(_ sender: UIButton) {
+        homePickerData = sharedInstance.pickerArray
+        homePickerView.reloadAllComponents()
+    }
+    
     // allow unwinding for foreignview
     @IBAction func unwindToHome(segue:UIStoryboardSegue){
         

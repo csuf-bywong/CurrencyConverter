@@ -7,7 +7,7 @@
 //
 
 import Foundation
-func exampleUsage()->Void{
+func getRate()->Float{
 
     // Example usage
     let myYQL = YQL()
@@ -35,6 +35,7 @@ func exampleUsage()->Void{
     }
     //sharedInstance.getSetRate(rate)
     //sharedInstance.rate = rate
+    return rate
 }
 //  allowing access to the shared instance
 let sharedInstance: SharedVars = SharedVars.shared
